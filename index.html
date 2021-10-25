@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS Titik Pendidikan Kota Batam dan Sekitarnya</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="leaflet.ajax.js"></script>
+</head>
+<style>
+    #mapid1{height: 700px;}
+    img{
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+    <h1>WebGIS Sekolah Negeri di Kecamatan Sekupang, Batam, Kepulauan Riau</h1>
+    <div id="mapid1"></div>
+</body>
+<script>
+
+    var mymap = L.map('mapid1').setView([1.1146174790822765, 103.95932361453329], 14);
+    //basemap
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+}).addTo(mymap);
+
+    var layer_OTM = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>,' +
+	' <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; ' +
+	'<a href="https://opentopomap.org">OpenTopoMap</a> ' +
+	'(<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+}).addTo(mymap);
+
+
+
+    var baseMaps = {
+		'OpenStreetMap' : mymap,
+		'OpenTopoMap' : layer_OTM,
+
+};
+			
+					
+var style1 = {
+    "color": "yellow",
+    "weight": 1
+}
+
+
+var marker1 = L.marker([1.1147276551673404, 103.95057889094885]).addTo(mymap).bindPopup('<b>SMA Negeri 1 Batam</b> <br /><center> <img src="foto/smansa.jpg">');
+var marker2 = L.marker([1.116279881594404, 103.96927515267572]).addTo(mymap).bindPopup('<b>SMK Negeri 4 Batam</b> <br /><center> <img src="foto/smk4.jpg">');
+var marker3 = L.marker([1.1034516555949274, 103.98200928296045]).addTo(mymap).bindPopup('<b>SMA Negeri 4 Batam</b> <br /><center> <img src="foto/sman4.jpg">');
+var markerx = L.marker([1.1093125015791188, 103.96662518111619]).addTo(mymap).bindPopup('<b>SMK Kemilau Bangsa</b> <br /><center> <img src="foto/kemilau.jpg">');
+var markery = L.marker([1.1249657416285683, 103.9681091829604]).addTo(mymap).bindPopup('<b>SMK It Ar-Risalah</b> <br /><center> <img src="foto/risalah.jpg">');
+var markerz = L.marker([1.110363855164864, 103.97089328111622]).addTo(mymap).bindPopup('<b>SMKS TERPADU PUTRA JAYA BATAM</b> <br /><center> <img src="foto/terpadu.jfif">');    
+var marker4 = L.marker([1.093739136839545, 103.93560078336003]).addTo(mymap).bindPopup('<b>SD Negeri 001 Sekupang</b> <br /><center> <img src="foto/01.jfif">');
+var marker5 = L.marker([1.1191486278239213, 103.97798389075503]).addTo(mymap).bindPopup('<b>SD Negeri 002 Sekupang</b> <br /><center> <img src="foto/02.jpg">');    
+var marker6 = L.marker([1.1264744541515253, 103.96009239685338]).addTo(mymap).bindPopup('<b>SD Negeri 003 Sekupang</b> <br /><center> <img src="foto/03.jpg">');    
+var marker7 = L.marker([1.1171256155253684, 103.96885098151125]).addTo(mymap).bindPopup('<b>SD Negeri 004 Sekupang</b> <br /><center> <img src="foto/04.jpg">');    
+var marker8 = L.marker([1.1138264549477717, 103.96514915452447]).addTo(mymap).bindPopup('<b>SD Negeri 005 Sekupang</b> <br /><center> <img src="foto/05.jpg">');    
+var marker9 = L.marker([1.1024828510109403, 103.9702537275378]).addTo(mymap).bindPopup('<b>SD Negeri 006 Sekupang</b> <br /><center> <img src="foto/06.jpg">');    
+var marker10 = L.marker([1.116817001163552, 103.97934401034675]).addTo(mymap).bindPopup('<b>SD Negeri 007 Sekupang</b> <br /><center> <img src="foto/07.jpg">');    
+var marker11 = L.marker([1.1019263093937008, 103.94803061219561]).addTo(mymap).bindPopup('<b>SD Negeri 008 Sekupang</b> <br /><center> <img src="foto/08.jpg">');    
+var marker12 = L.marker([1.1230734970313307, 103.91218070675767]).addTo(mymap).bindPopup('<b>SD Negeri 009 Sekupang</b> <br /><center> <img src="foto/09.jpg">');    
+var marker13 = L.marker([1.0623878580945147, 103.93029285452462]).addTo(mymap).bindPopup('<b>SD Negeri 010 Sekupang</b> <br /><center> <img src="foto/010.jpg">');    
+var marker14 = L.marker([1.1072478236921885, 103.97817358151129]).addTo(mymap).bindPopup('<b>SD Negeri 011 Sekupang</b> <br /><center> <img src="foto/011.jpg">');    
+var marker15 = L.marker([1.1154130128932422, 103.98739240334145]).addTo(mymap).bindPopup('<b>SD Negeri 012 Sekupang</b> <br /><center> <img src="foto/012.jpg">');    
+var marker16 = L.marker([1.0585499583234004, 103.94448095452456]).addTo(mymap).bindPopup('<b>SD Negeri 013 Sekupang</b> <br /><center> <img src="foto/">');    
+var marker17 = L.marker([1.1064195017376741, 103.95252269870223]).addTo(mymap).bindPopup('<b>SMP Negeri 3 Batam</b> <br /><center> <img src="foto/smp3.jpg">');    
+var marker18 = L.marker([1.1020485704980922, 103.96961845452452]).addTo(mymap).bindPopup('<b>SMP Negeri 20 Batam</b> <br /><center> <img src="foto/smp20.jpg">');    
+var marker19 = L.marker([1.1211169348381402, 103.98268549870217]).addTo(mymap).bindPopup('<b>SMP Negeri 25 Batam</b> <br /><center> <img src="foto/smp25.jpg">');    
+var marker20 = L.marker([1.0546343396132944, 103.95136939500483]).addTo(mymap).bindPopup('<b>SMP Negeri 47 Batam</b> <br /><center> <img src="foto/smp47.jpg">');    
+var marker21 = L.marker([1.108055040667311, 103.99052911219555]).addTo(mymap).bindPopup('<b>SMP Negeri 56 Batam</b> <br /><center> <img src="foto/smp56.jpg">');    
+var marker22 = L.marker([1.1261056006461985, 103.95988132384015]).addTo(mymap).bindPopup('<b>Smp Negeri 57 Batam</b> <br /><center> <img src="foto/smp57.jpg">');    
+
+var myfeatureGroup=L.featureGroup([marker1, marker2, marker3]).addTo(mymap)
+var myfeatureGroup1=L.featureGroup([marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, 
+marker12, marker13, marker14, marker15, marker16]).addTo(mymap)
+var myfeatureGroup2=L.featureGroup([marker17, marker18, marker19, marker20, marker21, marker22]).addTo(mymap)
+var myfeatureGroup3=L.featureGroup([markerx, markery, markerz]).addTo(mymap)
+
+
+var overlayMaps = {'SMA/SMK': myfeatureGroup,'SMP': myfeatureGroup2, 'SD': myfeatureGroup1, 'Lainnya': myfeatureGroup3 };					
+L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+var jsonTest = new L.GeoJSON.AJAX(["admin_batam.geojson"], {style:style1}).addTo(mymap);
+
+
+
+</script>
+</html>
